@@ -23,7 +23,7 @@ packer {
     }
     vmware = {
       version = ">= 0.0.1"
-      source  = "github.com/stromweld/vmware" # TODO: switching to stromweld repo for fix to vmware tools for fusion 13 till official fix is in place https://github.com/hashicorp/packer-plugin-vmware/issues/109
+      source  = "github.com/hashicorp/vmware" # TODO: switching to stromweld repo for fix to vmware tools for fusion 13 till official fix is in place https://github.com/hashicorp/packer-plugin-vmware/issues/109
     }
     windows-update = {
       version = ">= 0.14.1"
@@ -105,6 +105,7 @@ locals {
             "${path.root}/scripts/_common/vmware_debian_ubuntu.sh",
             "${path.root}/scripts/_common/parallels.sh",
             "${path.root}/scripts/${var.os_name}/hyperv_${var.os_name}.sh",
+            "${path.root}/scripts/${var.os_name}/devtools_${var.os_name}_${var.os_arch}.sh",
             "${path.root}/scripts/${var.os_name}/cleanup_${var.os_name}.sh",
             "${path.root}/scripts/_common/minimize.sh"
             ] : (
